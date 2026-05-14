@@ -1,0 +1,7 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="80" cy="80" r="74" stroke="#34D399" stroke-opacity="0.55" stroke-width="10"/>
+  <circle cx="80" cy="80" r="57" fill="#34D399" fill-opacity="0.14"/>
+  <text x="80" y="92" text-anchor="middle" fill="#A7F3D0" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" letter-spacing="2">
+    JNT
+  </text>
+</svg>
