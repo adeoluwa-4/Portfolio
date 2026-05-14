@@ -238,7 +238,7 @@ export default function PortfolioWebsite() {
                 </span>
                 <br />
                 <span className="hero-title typing-follow">
-                  I enjoy building software that solves real world problems through AI, automation, and thoughtful design.
+                  I build software that solves real problems with AI and thoughtful design.
                 </span>
               </h1>
               <p className="hero-lead mt-6 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
