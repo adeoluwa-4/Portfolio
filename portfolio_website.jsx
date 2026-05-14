@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const heroIcons = [
   {
@@ -40,16 +40,16 @@ const flagshipImages = [
 
 const featuredImages = [
   {
-    src: "/UEFA_Euro_2024_Logo.svg.png",
-    alt: "UEFA Euro 2024 logo",
+    src: "/RealSched.png",
+    alt: "SchedAI planner experience",
   },
   {
     src: "/Airlineshow2.png",
     alt: "Airline no-show prediction view",
   },
   {
-    src: "/RealSched.png",
-    alt: "SchedAI planner experience",
+    src: "/UEFA_Euro_2024_Logo.svg.png",
+    alt: "UEFA Euro 2024 logo",
   },
 ];
 
@@ -74,15 +74,17 @@ const IconRow = ({ className }) => (
 );
 
 export default function PortfolioWebsite() {
+  const rootRef = useRef(null);
+
   const projects = [
     {
-      title: "Euro 2024 Score Predictor",
+      title: "SchedAI",
       description:
-        "A soccer match score prediction project built around historical match data and predictive modeling.",
-      tech: ["Python", "Streamlit", "Pandas", "scikit-learn", "Monte Carlo"],
+        "An AI-powered planning app designed to turn natural language into structured daily plans with a polished mobile experience.",
+      tech: ["SwiftUI", "iOS", "Offline NLP", "Product Design", "OpenAI API", "Custom algorithms"],
       demo: null,
-      code: "https://github.com/adeoluwa-4/euro-2024-score-predictor",
-      stats: ["Match prediction", "Data + modeling", "Soccer analytics", "Random Forest + XGBoost", "Monte Carlo simulation"],
+      code: "https://github.com/adeoluwa-4/SchedAI",
+      stats: ["Mobile UX", "Task planning", "Real-time scheduling", "OpenAI integration", "Personalized plans"],
     },
     {
       title: "Airline No-Show Prediction",
@@ -94,13 +96,13 @@ export default function PortfolioWebsite() {
       stats: ["Classification model", "Feature analysis", "Real-world dataset", "Precision + validation"],
     },
     {
-      title: "SchedAI",
+      title: "Euro 2024 Score Predictor",
       description:
-        "An AI-powered planning app designed to turn natural language into structured daily plans with a polished mobile experience.",
-      tech: ["SwiftUI", "iOS", "Offline NLP", "Product Design", "OpenAI API", "Custom algorithms"],
+        "A soccer match score prediction project built around historical match data and predictive modeling.",
+      tech: ["Python", "Streamlit", "Pandas", "scikit-learn", "Monte Carlo"],
       demo: null,
-      code: "https://github.com/adeoluwa-4/SchedAI",
-      stats: ["Mobile UX", "Task planning", "Real-time scheduling", "OpenAI integration", "Personalized plans"],
+      code: "https://github.com/adeoluwa-4/euro-2024-score-predictor",
+      stats: ["Match prediction", "Data + modeling", "Soccer analytics", "Random Forest + XGBoost", "Monte Carlo simulation"],
     },
   ];
 
@@ -143,13 +145,83 @@ export default function PortfolioWebsite() {
   const [preview, setPreview] = useState(null);
   const closePreview = () => setPreview(null);
 
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+
+    let frameId = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+    let scrollDepth = 0;
+
+    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+    const applyParallax = () => {
+      frameId = 0;
+      root.style.setProperty("--parallax-deep-x", `${pointerX * -56}px`);
+      root.style.setProperty("--parallax-deep-y", `${pointerY * -28 + scrollDepth * -68}px`);
+      root.style.setProperty("--parallax-mid-x", `${pointerX * 44}px`);
+      root.style.setProperty("--parallax-mid-y", `${pointerY * 28 + scrollDepth * -42}px`);
+      root.style.setProperty("--parallax-near-x", `${pointerX * -34}px`);
+      root.style.setProperty("--parallax-near-y", `${pointerY * 36 + scrollDepth * 28}px`);
+      root.style.setProperty("--parallax-grid-x", `${pointerX * 24}px`);
+      root.style.setProperty("--parallax-grid-y", `${pointerY * 18 + scrollDepth * -22}px`);
+    };
+
+    const queueParallax = () => {
+      if (!frameId) frameId = window.requestAnimationFrame(applyParallax);
+    };
+
+    const updatePointer = (event) => {
+      pointerX = clamp((event.clientX / window.innerWidth - 0.5) * 2, -1, 1);
+      pointerY = clamp((event.clientY / window.innerHeight - 0.5) * 2, -1, 1);
+      queueParallax();
+    };
+
+    const resetPointer = () => {
+      pointerX = 0;
+      pointerY = 0;
+      queueParallax();
+    };
+
+    const updateScroll = () => {
+      const maxScrollable = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      const progress = clamp(window.scrollY / maxScrollable, 0, 1);
+      scrollDepth = (progress - 0.5) * 2;
+      queueParallax();
+    };
+
+    updateScroll();
+    applyParallax();
+    window.addEventListener("pointermove", updatePointer, { passive: true });
+    window.addEventListener("pointerleave", resetPointer, { passive: true });
+    window.addEventListener("scroll", updateScroll, { passive: true });
+    window.addEventListener("resize", updateScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("pointermove", updatePointer);
+      window.removeEventListener("pointerleave", resetPointer);
+      window.removeEventListener("scroll", updateScroll);
+      window.removeEventListener("resize", updateScroll);
+      if (frameId) window.cancelAnimationFrame(frameId);
+    };
+  }, []);
+
   return (
-    <div className="portfolio-bg relative min-h-screen text-white">
+    <div ref={rootRef} className="portfolio-bg parallax-root relative min-h-screen text-white">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="slideshow-layer" />
-        <div className="ambient-orb ambient-orb-a" />
-        <div className="ambient-orb ambient-orb-b" />
-        <div className="ambient-grid" />
+        <div className="parallax-layer parallax-deep">
+          <div className="slideshow-layer" />
+        </div>
+        <div className="parallax-layer parallax-mid">
+          <div className="ambient-orb ambient-orb-a" />
+        </div>
+        <div className="parallax-layer parallax-near">
+          <div className="ambient-orb ambient-orb-b" />
+        </div>
+        <div className="parallax-layer parallax-grid">
+          <div className="ambient-grid" />
+        </div>
       </div>
 
       <section className="slide-panel relative z-10 overflow-hidden border-b border-white/10" style={{ animationDelay: "0.05s" }}>
