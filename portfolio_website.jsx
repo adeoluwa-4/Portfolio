@@ -238,13 +238,13 @@ export default function PortfolioWebsite() {
                 </span>
                 <br />
                 <span className="hero-title typing-follow">
-                  I build useful products with software, AI, and design.
+                  I enjoy building software that solves real world problems through AI, automation, and thoughtful design.
                 </span>
               </h1>
               <p className="hero-lead mt-6 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
-                I’m a Computer Science student at Kansas State University with a minor in
-                Management Information Systems. I enjoy building tools that solve real
-                problems, from predictive systems to polished app experiences.
+                From machine learning prediction systems to cloud deployed web apps, I like
+                taking ideas from concept to production and continuously improving how they
+                work.
               </p>
               <div className="hero-cta-row mt-8 flex flex-wrap gap-4">
                 <a
