@@ -99,7 +99,7 @@ export default function PortfolioWebsite() {
         "An AI-powered planning app designed to turn natural language into structured daily plans with a polished mobile experience.",
       tech: ["SwiftUI", "iOS", "Offline NLP", "Product Design", "OpenAI API", "Custom algorithms"],
       demo: null,
-      code: null,
+      code: "https://github.com/adeoluwa-4/SchedAI",
       stats: ["Mobile UX", "Task planning", "Real-time scheduling", "OpenAI integration", "Personalized plans"],
     },
   ];
@@ -251,6 +251,14 @@ export default function PortfolioWebsite() {
                 Built an end-to-end machine learning and simulation platform for the 2026 FIFA World Cup. The dashboard cleans historical match data, joins ranking signals, predicts expected goals, and surfaces advancement odds through Monte Carlo sampling alongside the new FIFA brand direction.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
+                <a
+                  href="https://adeoluwa-4-wc26-predictor-streamlit-app-awcr9s.streamlit.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-2xl bg-white px-4 py-2 text-sm font-medium text-slate-950 transition hover:bg-slate-100"
+                >
+                  Live Demo
+                </a>
                 <a
                   href="https://github.com/adeoluwa-4/wc26-predictor"
                   target="_blank"
