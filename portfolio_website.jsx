@@ -106,6 +106,12 @@ export default function PortfolioWebsite() {
 
   const experience = [
     {
+      role: "Incoming Systems Developer (Summer 2026)",
+      company: "Textron Aviation",
+      details:
+        "Incoming summer role focused on systems development, cross-functional engineering collaboration, and building reliable software solutions.",
+    },
+    {
       role: "AI/ML Web Development Intern",
       company: "JNT Company",
       details:
