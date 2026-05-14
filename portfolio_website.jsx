@@ -80,11 +80,11 @@ export default function PortfolioWebsite() {
     {
       title: "SchedAI",
       description:
-        "An AI-powered planning app designed to turn natural language into structured daily plans with a polished mobile experience.",
-      tech: ["SwiftUI", "iOS", "Offline NLP", "Product Design", "OpenAI API", "Custom algorithms"],
+        "An AI-powered planning app that converts natural language into structured daily plans, with offline parsing support and a polished cross-platform experience.",
+      tech: ["SwiftUI", "iOS", "Offline NLP", "OpenAI API", "Custom algorithms", "Vercel"],
       demo: "https://schedai-snowy.vercel.app/",
       code: "https://github.com/adeoluwa-4/SchedAI",
-      stats: ["Mobile UX", "Task planning", "Real-time scheduling", "OpenAI integration", "Personalized plans"],
+      stats: ["Live demo deployed", "Task planning", "Real-time scheduling", "OpenAI integration", "Personalized plans"],
     },
     {
       title: "Airline No-Show Prediction",
@@ -108,16 +108,18 @@ export default function PortfolioWebsite() {
 
   const experience = [
     {
-      role: "Incoming Systems Developer (Summer 2026)",
+      role: "Incoming Systems Developer Intern",
       company: "Textron Aviation",
       logo: "/logos/textron.svg",
+      dates: "May 2026 - August 2026",
       details:
         "Incoming summer role focused on systems development, cross-functional engineering collaboration, and building reliable software solutions.",
     },
     {
-      role: "AI/ML Web Development Intern",
+      role: "AI Web Developer Intern",
       company: "JNT Company",
       logo: "/logos/jnt.svg",
+      dates: "May 2025 - July 2025",
       details:
         "Built machine learning web features, worked across frontend and backend systems, and helped improve performance and deployment workflows.",
     },
@@ -125,6 +127,7 @@ export default function PortfolioWebsite() {
       role: "IT Support Representative",
       company: "Kansas State University",
       logo: "/logos/kstate.svg",
+      dates: "2024 - 2026",
       details:
         "Resolved technical issues for students, improved troubleshooting workflows, and built a stronger foundation in systems thinking, communication, and support engineering.",
     },
@@ -132,15 +135,26 @@ export default function PortfolioWebsite() {
 
   const skills = [
     "Python",
+    "TypeScript",
     "JavaScript",
+    "Node.js",
     "React",
     "React Native",
     "SwiftUI",
     "SQL",
     "Machine Learning",
+    "Deep Learning",
     "Pandas",
     "scikit-learn",
+    "XGBoost",
+    "Streamlit",
+    "TensorFlow",
     "AWS",
+    "Supabase",
+    "Vercel",
+    "Tailwind CSS",
+    "Docker",
+    "Figma",
     "Git",
     "API Integration",
   ];
@@ -473,19 +487,28 @@ export default function PortfolioWebsite() {
               className="slide-panel tile-animate rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl"
               style={{ animationDelay: `${0.38 + index * 0.08}s` }}
             >
-              <div className="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
-                <h3 className="text-xl font-semibold">{item.role}</h3>
-                <div className="flex items-center gap-2">
-                  {item.logo ? (
+              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <h3 className="text-xl font-semibold">{item.role}</h3>
+                  <div className="mt-1 flex flex-wrap items-center gap-3 text-sm text-slate-400">
+                    <p>{item.company}</p>
+                    {item.dates ? (
+                      <span className="rounded-full border border-white/15 px-2.5 py-0.5 text-xs text-slate-300">
+                        {item.dates}
+                      </span>
+                    ) : null}
+                  </div>
+                </div>
+                {item.logo ? (
+                  <div className="flex h-16 w-full shrink-0 items-center justify-center rounded-xl border border-slate-200/90 bg-white px-4 shadow-sm md:w-[260px]">
                     <img
                       src={item.logo}
                       alt={`${item.company} logo`}
-                      className="h-6 w-6 rounded-full border border-white/15 bg-white/5 p-1"
+                      className="max-h-11 w-full object-contain"
                       loading="lazy"
                     />
-                  ) : null}
-                  <p className="text-sm text-slate-400">{item.company}</p>
-                </div>
+                  </div>
+                ) : null}
               </div>
               <p className="mt-3 leading-7 text-slate-300">{item.details}</p>
             </div>
