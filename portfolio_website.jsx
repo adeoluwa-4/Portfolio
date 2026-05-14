@@ -19,22 +19,22 @@ const heroIcons = [
   {
     label: "Resume",
     icon: "/icons/resume.svg",
-    href: "/Ade_Adekoya_Resume.pdf",
+    href: "/Ade_Adekoya_Resume_.pdf",
   },
 ];
 
 const flagshipImages = [
   {
-    src: "/FIFA-World-Cup-26-Official-Brand-unveiled-in-Los-Angeles.avif",
-    alt: "World Cup 2026 Predictor brand concept",
+    src: "/WC26-new-1.png",
+    alt: "World Cup predictor match outcome dashboard",
   },
   {
-    src: "/WC26-1.png",
-    alt: "World Cup 2026 Predictor group winners view",
+    src: "/WC26-new-2.png",
+    alt: "World Cup predictor team advancement dashboard",
   },
   {
-    src: "/WC26-2.png",
-    alt: "World Cup 2026 Predictor team odds dashboard",
+    src: "/WC26-new-3.png",
+    alt: "World Cup predictor title odds dashboard",
   },
 ];
 
@@ -63,7 +63,7 @@ const IconRow = ({ className }) => (
           href={item.href}
           target={isMail ? undefined : "_blank"}
           rel={isMail ? undefined : "noreferrer"}
-          className="flex items-center gap-2 rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm text-slate-700 shadow-sm transition hover:border-sky-400 hover:text-slate-900"
+          className="tile-animate flex items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-4 py-2 text-sm text-white transition hover:border-blue-300 hover:bg-white/10"
         >
           <img src={item.icon} alt={`${item.label} icon`} className="h-6 w-6" />
           {item.label}
@@ -138,59 +138,64 @@ export default function PortfolioWebsite() {
   const closePreview = () => setPreview(null);
 
   return (
-    <div className="ambient-bg relative min-h-screen text-slate-900">
+    <div className="portfolio-bg relative min-h-screen text-white">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="slideshow-layer" />
         <div className="ambient-orb ambient-orb-a" />
         <div className="ambient-orb ambient-orb-b" />
         <div className="ambient-grid" />
       </div>
 
-      <section className="relative z-10 overflow-hidden border-b border-slate-200">
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-200/45 via-white/20 to-emerald-200/35" />
+      <section className="slide-panel relative z-10 overflow-hidden border-b border-white/10" style={{ animationDelay: "0.05s" }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-indigo-500/10 to-emerald-400/10" />
         <div className="relative mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-28">
           <div className="grid items-center gap-10 md:grid-cols-[1.3fr_0.7fr]">
             <div>
-              <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-sky-700">
+              <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-blue-300">
                 Portfolio
               </p>
               <h1 className="max-w-3xl text-4xl font-semibold leading-tight md:text-6xl">
-                Hi, I’m <span className="text-sky-700">Ade Adekoya</span>.
+                <span className="typing-line">
+                  Hi, I’m <span className="typing-accent">Ade Adekoya</span>.
+                </span>
                 <br />
-                I build useful products with software, AI, and design.
+                <span className="hero-title typing-follow">
+                  I build useful products with software, AI, and design.
+                </span>
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
+              <p className="hero-lead mt-6 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
                 I’m a Computer Science student at Kansas State University with a minor in
                 Management Information Systems. I enjoy building tools that solve real
                 problems, from predictive systems to polished app experiences.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="hero-cta-row mt-8 flex flex-wrap gap-4">
                 <a
                   href="#projects"
-                  className="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-medium text-white shadow-lg transition hover:-translate-y-0.5"
+                  className="tile-animate rounded-2xl bg-white px-5 py-3 text-sm font-medium text-slate-950 shadow-lg transition hover:-translate-y-0.5"
                 >
                   View Projects
                 </a>
                 <a
                   href="#contact"
-                  className="rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition hover:border-sky-400 hover:text-slate-900"
+                  className="tile-animate rounded-2xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/10"
                 >
                   Contact Me
                 </a>
               </div>
-              <IconRow className="mt-6 flex flex-wrap items-center gap-4" />
+              <IconRow className="hero-icons-row mt-6 flex flex-wrap items-center gap-4" />
             </div>
 
             <div className="flex justify-center md:justify-end">
-              <div className="w-full max-w-sm rounded-[2rem] border border-slate-200 bg-white/90 p-6 shadow-xl backdrop-blur">
-                <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6">
-                  <p className="text-sm text-slate-500">Currently focused on</p>
-                  <ul className="mt-4 space-y-3 text-sm text-slate-700">
+              <div className="float-card tile-animate w-full max-w-sm rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur">
+                <div className="rounded-[1.5rem] border border-white/10 bg-slate-900/80 p-6">
+                  <p className="text-sm text-slate-400">Currently focused on</p>
+                  <ul className="mt-4 space-y-3 text-sm text-slate-200">
                     <li>• AI powered products</li>
                     <li>• Machine learning systems</li>
                     <li>• Mobile experiences</li>
                     <li>• Practical software tools</li>
                   </ul>
-                  <div className="mt-6 rounded-2xl bg-sky-100 p-4 text-sm text-sky-800">
+                  <div className="mt-6 rounded-2xl bg-blue-400/10 p-4 text-sm text-blue-200">
                     Open to internships, software engineering roles, and product-focused opportunities.
                   </div>
                 </div>
@@ -200,31 +205,32 @@ export default function PortfolioWebsite() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto max-w-6xl px-6 py-16 md:px-10" id="about">
+      <section className="slide-panel relative z-10 mx-auto max-w-6xl px-6 py-16 md:px-10" style={{ animationDelay: "0.12s" }} id="about">
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl">
             <h2 className="text-2xl font-semibold">About Me</h2>
-            <p className="mt-4 leading-7 text-slate-600">
+            <p className="mt-4 leading-7 text-slate-300">
               I like building things that feel clean, practical, and ambitious. My background
               blends software engineering, machine learning, and product thinking, which lets
               me move comfortably from idea to execution.
             </p>
-            <p className="mt-4 leading-7 text-slate-600">
+            <p className="mt-4 leading-7 text-slate-300">
               Lately I’ve been focused on predictive systems, automation, and polished app
               experiences from machine learning products like World Cup 2026 Predictor to mobile and
               full-stack tools that solve real problems.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl">
             <h2 className="text-2xl font-semibold">Skills</h2>
             <div className="mt-5 flex flex-wrap gap-3">
-              {skills.map((skill) => (
+              {skills.map((skill, index) => (
                 <span
                   key={skill}
-                  className="flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-700"
+                  className="chip-animate flex items-center gap-2 rounded-full border border-white/10 bg-slate-900 px-4 py-2 text-sm text-slate-200"
+                  style={{ animationDelay: `${0.18 + index * 0.05}s` }}
                 >
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full border border-sky-200 bg-sky-50 text-[0.65rem] uppercase tracking-[0.2em] text-sky-700">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full border border-blue-400/20 bg-blue-400/10 text-[0.65rem] uppercase tracking-[0.2em] text-blue-200">
                     {skill[0]}
                   </span>
                   {skill}
@@ -235,13 +241,13 @@ export default function PortfolioWebsite() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto max-w-6xl px-6 py-8 md:px-10" id="projects">
-        <div className="mb-12 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl">
+      <section className="slide-panel relative z-10 mx-auto max-w-6xl px-6 py-8 md:px-10" style={{ animationDelay: "0.2s" }} id="projects">
+        <div className="mb-12 rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl">
           <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-sky-700">Flagship Project</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-blue-300">Flagship Project</p>
               <h3 className="mt-2 text-3xl font-semibold">World Cup 2026 Predictor</h3>
-              <p className="mt-4 max-w-2xl leading-7 text-slate-600">
+              <p className="mt-4 max-w-2xl leading-7 text-slate-300">
                 Built an end-to-end machine learning and simulation platform for the 2026 FIFA World Cup. The dashboard cleans historical match data, joins ranking signals, predicts expected goals, and surfaces advancement odds through Monte Carlo sampling alongside the new FIFA brand direction.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
@@ -249,31 +255,32 @@ export default function PortfolioWebsite() {
                   href="https://github.com/adeoluwa-4/wc26-predictor"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-sky-400 hover:text-slate-900"
+                  className="rounded-2xl border border-white/20 px-4 py-2 text-sm font-medium text-white transition hover:border-blue-300 hover:bg-white/5"
                 >
                   GitHub
                 </a>
               </div>
-              <div className="mt-5 flex flex-wrap gap-3 text-sm text-slate-600">
-                <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1">49,071 historical matches</span>
-                <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1">48-team tournament model</span>
-                <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1">Monte Carlo simulation</span>
+              <div className="mt-5 flex flex-wrap gap-3 text-sm text-slate-300">
+                <span className="rounded-full border border-white/10 px-3 py-1">49,071 historical matches</span>
+                <span className="rounded-full border border-white/10 px-3 py-1">48-team tournament model</span>
+                <span className="rounded-full border border-white/10 px-3 py-1">Monte Carlo simulation</span>
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
-              {flagshipImages.map((image) => (
+              {flagshipImages.map((image, index) => (
                 <button
                   key={image.src}
                   type="button"
                   onClick={() => setPreview(image)}
                   aria-label={`Preview ${image.alt}`}
-                  className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50"
+                  className="slide-panel tile-animate overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70"
+                  style={{ animationDelay: `${0.22 + index * 0.08}s` }}
                 >
                   <img
                     src={image.src}
                     alt={image.alt}
                     loading="lazy"
-                    className="h-48 w-full object-contain bg-slate-100 transition duration-200 hover:scale-105"
+                    className="h-48 w-full object-contain bg-slate-950 transition duration-200 hover:scale-105"
                   />
                 </button>
               ))}
@@ -283,24 +290,25 @@ export default function PortfolioWebsite() {
 
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <p className="text-sm uppercase tracking-[0.2em] text-sky-700">Selected Work</p>
+            <p className="text-sm uppercase tracking-[0.2em] text-blue-300">Selected Work</p>
             <h2 className="mt-2 text-3xl font-semibold">Featured Projects</h2>
           </div>
         </div>
 
         <div className="mb-10 grid gap-6 md:grid-cols-3">
-          {featuredImages.map((image) => (
+          {featuredImages.map((image, index) => (
             <button
               key={image.src}
               type="button"
               onClick={() => setPreview(image)}
               aria-label={`Preview ${image.alt}`}
-              className="group rounded-3xl border border-slate-200 bg-white p-4 shadow-lg"
+              className="slide-panel tile-animate group rounded-3xl border border-white/10 bg-white/5 p-4 shadow-xl"
+              style={{ animationDelay: `${0.26 + index * 0.08}s` }}
             >
-              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60">
                 <img
                   src={image.src}
-                  className="h-56 w-full object-contain bg-slate-100 transition duration-300 group-hover:scale-[1.02]"
+                  className="h-56 w-full object-contain bg-slate-950 transition duration-300 group-hover:scale-[1.02]"
                   alt={image.alt}
                   loading="lazy"
                 />
@@ -310,28 +318,29 @@ export default function PortfolioWebsite() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <div
               key={project.title}
-              className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-lg transition hover:-translate-y-1"
+              className="slide-panel tile-animate flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl transition hover:-translate-y-1"
+              style={{ animationDelay: `${0.32 + index * 0.08}s` }}
             >
               <div className="flex flex-col gap-4">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
-                <p className="text-sm leading-6 text-slate-600">{project.description}</p>
+                <p className="text-sm leading-6 text-slate-300">{project.description}</p>
               </div>
-              <div className="mt-5 mb-8 flex flex-wrap gap-3 pb-4 text-xs text-slate-500">
+              <div className="mt-5 mb-8 flex flex-wrap gap-3 pb-4 text-xs text-slate-400">
                 {project.tech.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-600"
+                    className="rounded-full bg-slate-900 px-3 py-1 text-xs text-slate-300"
                   >
                     {item}
                   </span>
                 ))}
               </div>
-              <div className="mt-5 flex flex-wrap gap-3 text-xs text-slate-500">
+              <div className="mt-5 flex flex-wrap gap-3 text-xs text-slate-400">
                 {project.stats.map((item) => (
-                  <span key={item} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1">
+                  <span key={item} className="rounded-full border border-white/10 px-3 py-1">
                     {item}
                   </span>
                 ))}
@@ -353,7 +362,7 @@ export default function PortfolioWebsite() {
                       href={project.code}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-xl border border-slate-300 bg-white px-4 py-2 font-medium text-slate-700 transition hover:border-sky-400 hover:text-slate-900"
+                      className="rounded-xl border border-white/20 px-4 py-2 font-medium text-white transition hover:border-blue-300 hover:bg-white/5"
                     >
                       GitHub
                     </a>
@@ -365,29 +374,30 @@ export default function PortfolioWebsite() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto max-w-6xl px-6 py-16 md:px-10" id="experience">
-        <p className="text-sm uppercase tracking-[0.2em] text-sky-700">Background</p>
+      <section className="slide-panel relative z-10 mx-auto max-w-6xl px-6 py-16 md:px-10" style={{ animationDelay: "0.26s" }} id="experience">
+        <p className="text-sm uppercase tracking-[0.2em] text-blue-300">Background</p>
         <h2 className="mt-2 text-3xl font-semibold">Experience</h2>
         <div className="mt-8 space-y-5">
-          {experience.map((item) => (
+          {experience.map((item, index) => (
             <div
               key={item.role}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg"
+              className="slide-panel tile-animate rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl"
+              style={{ animationDelay: `${0.38 + index * 0.08}s` }}
             >
               <div className="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
                 <h3 className="text-xl font-semibold">{item.role}</h3>
-                <p className="text-sm text-slate-500">{item.company}</p>
+                <p className="text-sm text-slate-400">{item.company}</p>
               </div>
-              <p className="mt-3 leading-7 text-slate-600">{item.details}</p>
+              <p className="mt-3 leading-7 text-slate-300">{item.details}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto max-w-6xl px-6 pb-20 md:px-10" id="contact">
-        <div className="rounded-[2rem] border border-slate-200 bg-gradient-to-r from-sky-100/80 to-emerald-100/70 p-8 shadow-xl">
+      <section className="slide-panel relative z-10 mx-auto max-w-6xl px-6 pb-20 md:px-10" style={{ animationDelay: "0.32s" }} id="contact">
+        <div className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-blue-500/15 to-purple-500/15 p-8 shadow-2xl">
           <h2 className="text-3xl font-semibold">Let’s build something great</h2>
-          <p className="mt-4 max-w-2xl leading-7 text-slate-600">
+          <p className="mt-4 max-w-2xl leading-7 text-slate-300">
             I’m interested in opportunities where I can contribute, learn fast, and ship useful
             products. Reach out for internships, collaborations, or tech conversations.
           </p>
@@ -395,18 +405,18 @@ export default function PortfolioWebsite() {
       </section>
       {preview && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/65 px-4 py-10"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 px-4 py-10"
           onClick={closePreview}
         >
           <div
-            className="relative w-full max-w-5xl rounded-3xl border border-slate-200 bg-white p-4 shadow-2xl"
+            className="relative w-full max-w-5xl rounded-3xl border border-white/20 bg-slate-950/90 p-4 shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
             <button
               type="button"
               aria-label="Close preview"
               onClick={closePreview}
-              className="absolute right-4 top-4 rounded-full border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 transition hover:border-slate-400"
+              className="absolute right-4 top-4 rounded-full border border-white/20 bg-white/5 px-3 py-2 text-sm text-white transition hover:bg-white/10"
             >
               ✕
             </button>
@@ -415,7 +425,7 @@ export default function PortfolioWebsite() {
               alt={preview.alt}
               className="mx-auto max-h-[80vh] max-w-[90vw] object-contain"
             />
-            <p className="mt-4 text-center text-sm text-slate-600">{preview.alt}</p>
+            <p className="mt-4 text-center text-sm text-slate-300">{preview.alt}</p>
           </div>
         </div>
       )}
