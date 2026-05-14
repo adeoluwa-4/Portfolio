@@ -83,6 +83,41 @@
 
 .portfolio-bg {
   background: #020617;
+  --parallax-deep-x: 0px;
+  --parallax-deep-y: 0px;
+  --parallax-mid-x: 0px;
+  --parallax-mid-y: 0px;
+  --parallax-near-x: 0px;
+  --parallax-near-y: 0px;
+  --parallax-grid-x: 0px;
+  --parallax-grid-y: 0px;
+}
+
+.parallax-root {
+  isolation: isolate;
+}
+
+.parallax-layer {
+  position: absolute;
+  inset: -6%;
+  will-change: transform;
+  transition: transform 90ms ease-out;
+}
+
+.parallax-deep {
+  transform: translate3d(var(--parallax-deep-x), var(--parallax-deep-y), 0) scale(1.08);
+}
+
+.parallax-mid {
+  transform: translate3d(var(--parallax-mid-x), var(--parallax-mid-y), 0) scale(1.06);
+}
+
+.parallax-near {
+  transform: translate3d(var(--parallax-near-x), var(--parallax-near-y), 0) scale(1.04);
+}
+
+.parallax-grid {
+  transform: translate3d(var(--parallax-grid-x), var(--parallax-grid-y), 0) scale(1.03);
 }
 
 .slideshow-layer {
@@ -209,6 +244,7 @@
   .slideshow-layer,
   .ambient-orb-a,
   .ambient-orb-b,
+  .parallax-layer,
   .hero-title,
   .typing-line,
   .typing-follow,
