@@ -82,7 +82,7 @@ export default function PortfolioWebsite() {
       description:
         "An AI-powered planning app designed to turn natural language into structured daily plans with a polished mobile experience.",
       tech: ["SwiftUI", "iOS", "Offline NLP", "Product Design", "OpenAI API", "Custom algorithms"],
-      demo: null,
+      demo: "https://schedai-snowy.vercel.app/",
       code: "https://github.com/adeoluwa-4/SchedAI",
       stats: ["Mobile UX", "Task planning", "Real-time scheduling", "OpenAI integration", "Personalized plans"],
     },
@@ -110,18 +110,21 @@ export default function PortfolioWebsite() {
     {
       role: "Incoming Systems Developer (Summer 2026)",
       company: "Textron Aviation",
+      logo: "/logos/textron.svg",
       details:
         "Incoming summer role focused on systems development, cross-functional engineering collaboration, and building reliable software solutions.",
     },
     {
       role: "AI/ML Web Development Intern",
       company: "JNT Company",
+      logo: "/logos/jnt.svg",
       details:
         "Built machine learning web features, worked across frontend and backend systems, and helped improve performance and deployment workflows.",
     },
     {
       role: "IT Support Representative",
       company: "Kansas State University",
+      logo: "/logos/kstate.svg",
       details:
         "Resolved technical issues for students, improved troubleshooting workflows, and built a stronger foundation in systems thinking, communication, and support engineering.",
     },
@@ -472,7 +475,17 @@ export default function PortfolioWebsite() {
             >
               <div className="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
                 <h3 className="text-xl font-semibold">{item.role}</h3>
-                <p className="text-sm text-slate-400">{item.company}</p>
+                <div className="flex items-center gap-2">
+                  {item.logo ? (
+                    <img
+                      src={item.logo}
+                      alt={`${item.company} logo`}
+                      className="h-6 w-6 rounded-full border border-white/15 bg-white/5 p-1"
+                      loading="lazy"
+                    />
+                  ) : null}
+                  <p className="text-sm text-slate-400">{item.company}</p>
+                </div>
               </div>
               <p className="mt-3 leading-7 text-slate-300">{item.details}</p>
             </div>
