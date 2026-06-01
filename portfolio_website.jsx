@@ -112,7 +112,7 @@ export default function PortfolioWebsite() {
         "A voice-driven AI project focused on natural interaction, responsive feedback, and a clean path from capture to deployment.",
       tech: ["Python", "Streamlit", "Speech-to-text", "LLM tooling", "Deployment"],
       demo: null,
-      code: null,
+      code: "https://github.com/adeoluwa-4/VoicePreserve",
       stats: ["Voice workflow", "Fast interaction", "User feedback", "Deployable app", "Assistant UX"],
     },
   ];
