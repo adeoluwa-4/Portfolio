@@ -23,6 +23,21 @@ const heroIcons = [
   },
 ];
 
+const flagshipImages = [
+  {
+    src: "/WC26-new-1.png",
+    alt: "World Cup predictor match outcome dashboard",
+  },
+  {
+    src: "/WC26-new-2.png",
+    alt: "World Cup predictor team advancement dashboard",
+  },
+  {
+    src: "/WC26-new-3.png",
+    alt: "World Cup predictor title odds dashboard",
+  },
+];
+
 const voicePreserveLogo =
   "data:image/svg+xml;charset=UTF-8," +
   encodeURIComponent(`
@@ -334,7 +349,7 @@ export default function PortfolioWebsite() {
 
       <section className="slide-panel relative z-10 mx-auto max-w-6xl px-6 py-8 md:px-10" style={{ animationDelay: "0.2s" }} id="projects">
         <div className="mb-12 rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl">
-          <div className="grid gap-6">
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
               <p className="text-sm uppercase tracking-[0.2em] text-blue-300">Flagship Project</p>
               <h3 className="mt-2 text-3xl font-semibold">World Cup 2026 Predictor</h3>
@@ -364,6 +379,25 @@ export default function PortfolioWebsite() {
                 <span className="rounded-full border border-white/10 px-3 py-1">48-team tournament model</span>
                 <span className="rounded-full border border-white/10 px-3 py-1">Monte Carlo simulation</span>
               </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {flagshipImages.map((image, index) => (
+                <button
+                  key={image.src}
+                  type="button"
+                  onClick={() => setPreview(image)}
+                  aria-label={`Preview ${image.alt}`}
+                  className="slide-panel tile-animate overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70"
+                  style={{ animationDelay: `${0.22 + index * 0.08}s` }}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    loading="lazy"
+                    className="h-48 w-full object-contain bg-slate-950 transition duration-200 hover:scale-105"
+                  />
+                </button>
+              ))}
             </div>
           </div>
         </div>
