@@ -138,7 +138,7 @@ export default function PortfolioWebsite() {
       role: "IT Support Representative",
       company: "Kansas State University",
       logo: "/logos/kstate.svg",
-      dates: "2024 - 2026",
+      dates: "2024-present",
       details:
         "Resolved technical issues for students, improved troubleshooting workflows, and built a stronger foundation in systems thinking, communication, and support engineering.",
     },
