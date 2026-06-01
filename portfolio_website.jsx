@@ -119,12 +119,12 @@ export default function PortfolioWebsite() {
 
   const experience = [
     {
-      role: "Incoming Systems Developer Intern",
+      role: "Systems Developer Intern",
       company: "Textron Aviation",
-      logo: "/logos/textron.svg",
+      logo: "/logos/cessna-beechcraft-textron.png",
       dates: "May 2026 - August 2026",
       details:
-        "Incoming summer role focused on systems development, cross-functional engineering collaboration, and building reliable software solutions.",
+        "Summer role focused on systems development, cross-functional engineering collaboration, and building reliable software solutions.",
     },
     {
       role: "AI Web Developer Intern",
