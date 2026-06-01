@@ -23,20 +23,7 @@ const heroIcons = [
   },
 ];
 
-const flagshipImages = [
-  {
-    src: "/WC26-new-1.png",
-    alt: "World Cup predictor match outcome dashboard",
-  },
-  {
-    src: "/WC26-new-2.png",
-    alt: "World Cup predictor team advancement dashboard",
-  },
-  {
-    src: "/WC26-new-3.png",
-    alt: "World Cup predictor title odds dashboard",
-  },
-];
+const flagshipImages = [];
 
 const voicePreserveLogo =
   "data:image/svg+xml;charset=UTF-8," +
