@@ -25,16 +25,16 @@ const heroIcons = [
 
 const flagshipImages = [
   {
-    src: "/WC26-new-1.png",
-    alt: "World Cup predictor match outcome dashboard",
+    src: "/voice-wave.svg",
+    alt: "VoicePreserve brand visual",
   },
   {
-    src: "/WC26-new-2.png",
-    alt: "World Cup predictor team advancement dashboard",
+    src: "/voice-wave.svg",
+    alt: "VoicePreserve styling and semantic fidelity visual",
   },
   {
-    src: "/WC26-new-3.png",
-    alt: "World Cup predictor title odds dashboard",
+    src: "/voice-wave.svg",
+    alt: "VoicePreserve transparency and revision visual",
   },
 ];
 
@@ -48,8 +48,8 @@ const featuredImages = [
     alt: "Airline no-show prediction view",
   },
   {
-    src: "/UEFA_Euro_2024_Logo.svg.png",
-    alt: "UEFA Euro 2024 logo",
+    src: "/voice-wave.svg",
+    alt: "Voice assistant preview",
   },
 ];
 
@@ -96,13 +96,13 @@ export default function PortfolioWebsite() {
       stats: ["Classification model", "Feature analysis", "Real-world dataset", "Precision + validation"],
     },
     {
-      title: "Euro 2024 Score Predictor",
+      title: "Voice Preserve",
       description:
-        "A soccer match score prediction project built around historical match data and predictive modeling.",
-      tech: ["Python", "Streamlit", "Pandas", "scikit-learn", "Monte Carlo"],
+        "A voice-driven AI project focused on natural interaction, responsive feedback, and a clean path from capture to deployment.",
+      tech: ["Python", "Streamlit", "Speech-to-text", "LLM tooling", "Deployment"],
       demo: null,
-      code: "https://github.com/adeoluwa-4/euro-2024-score-predictor",
-      stats: ["Match prediction", "Data + modeling", "Soccer analytics", "Random Forest + XGBoost", "Monte Carlo simulation"],
+      code: null,
+      stats: ["Voice workflow", "Fast interaction", "User feedback", "Deployable app", "Assistant UX"],
     },
   ];
 
@@ -311,8 +311,8 @@ export default function PortfolioWebsite() {
             </p>
             <p className="mt-4 leading-7 text-slate-300">
               Lately I’ve been focused on predictive systems, automation, and polished app
-              experiences from machine learning products like World Cup 2026 Predictor to mobile and
-              full-stack tools that solve real problems.
+              experiences from projects like Voice Preserve to mobile and full-stack tools that
+              solve real problems.
             </p>
           </div>
 
@@ -341,32 +341,29 @@ export default function PortfolioWebsite() {
           <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
               <p className="text-sm uppercase tracking-[0.2em] text-blue-300">Flagship Project</p>
-              <h3 className="mt-2 text-3xl font-semibold">World Cup 2026 Predictor</h3>
+              <h3 className="mt-2 text-3xl font-semibold">Voice Preserve</h3>
               <p className="mt-4 max-w-2xl leading-7 text-slate-300">
-                Built an end-to-end machine learning and simulation platform for the 2026 FIFA World Cup. The dashboard cleans historical match data, joins ranking signals, predicts expected goals, and surfaces advancement odds through Monte Carlo sampling alongside the new FIFA brand direction.
+                A production-oriented web app for revising rough or AI-assisted drafts so they sound
+                more like the author while preserving meaning, transparency, and a clear editing
+                trail.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <a
-                  href="https://adeoluwa-4-wc26-predictor-streamlit-app-awcr9s.streamlit.app/"
+                  href="https://github.com/adeoluwa-4/VoicePreserve"
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-2xl bg-white px-4 py-2 text-sm font-medium text-slate-950 transition hover:bg-slate-100"
                 >
-                  Live Demo
-                </a>
-                <a
-                  href="https://github.com/adeoluwa-4/wc26-predictor"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-2xl border border-white/20 px-4 py-2 text-sm font-medium text-white transition hover:border-blue-300 hover:bg-white/5"
-                >
                   GitHub
                 </a>
+                <span className="rounded-2xl border border-white/20 px-4 py-2 text-sm font-medium text-white/80">
+                  Next.js 16
+                </span>
               </div>
               <div className="mt-5 flex flex-wrap gap-3 text-sm text-slate-300">
-                <span className="rounded-full border border-white/10 px-3 py-1">49,071 historical matches</span>
-                <span className="rounded-full border border-white/10 px-3 py-1">48-team tournament model</span>
-                <span className="rounded-full border border-white/10 px-3 py-1">Monte Carlo simulation</span>
+                <span className="rounded-full border border-white/10 px-3 py-1">Meaning preservation</span>
+                <span className="rounded-full border border-white/10 px-3 py-1">Transparent revisions</span>
+                <span className="rounded-full border border-white/10 px-3 py-1">Voice alignment</span>
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
