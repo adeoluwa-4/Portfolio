@@ -25,6 +25,14 @@ const heroIcons = [
 
 const flagshipImages = [
   {
+    src: "/UEFA_Euro_2024_Logo.svg.png",
+    alt: "UEFA Euro 2024 logo",
+  },
+  {
+    src: "/UEFA_Euro_2024_Logo.svg.png",
+    alt: "UEFA Euro 2024 logo",
+  },
+  {
     src: "/WC26-new-3.png",
     alt: "World Cup predictor title odds dashboard",
   },
