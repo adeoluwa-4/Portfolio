@@ -93,8 +93,8 @@ export default function PortfolioWebsite() {
       description:
         "An AI-powered planning app that converts natural language into structured daily plans, with offline parsing support and a polished cross-platform experience.",
       tech: ["SwiftUI", "iOS", "Offline NLP", "OpenAI API", "Custom algorithms", "Vercel"],
-      demo: "https://apps.apple.com/us/app/schedai/id6777319679",
-      demoLabel: "View on App Store",
+      link: "https://apps.apple.com/us/app/schedai/id6777319679",
+      linkLabel: "App Store",
       code: "https://github.com/adeoluwa-4/SchedAI",
       stats: ["Available on the App Store", "Task planning", "Real-time scheduling", "OpenAI integration", "Personalized plans"],
     },
@@ -103,7 +103,7 @@ export default function PortfolioWebsite() {
       description:
         "A machine learning project that predicts airline passenger no-shows and explores the strongest drivers behind the outcome.",
       tech: ["Python", "scikit-learn", "Pandas", "Feature engineering"],
-      demo: null,
+      link: null,
       code: "https://github.com/adeoluwa-4/airline-no-show-prediction",
       stats: ["Classification model", "Feature analysis", "Real-world dataset", "Precision + validation"],
     },
@@ -112,7 +112,7 @@ export default function PortfolioWebsite() {
       description:
         "A voice-driven AI project focused on natural interaction, responsive feedback, and a clean path from capture to deployment.",
       tech: ["Python", "Streamlit", "Speech-to-text", "LLM tooling", "Deployment"],
-      demo: null,
+      link: null,
       code: "https://github.com/adeoluwa-4/VoicePreserve",
       stats: ["Voice workflow", "Fast interaction", "User feedback", "Deployable app", "Assistant UX"],
     },
@@ -460,16 +460,16 @@ export default function PortfolioWebsite() {
                   </span>
                 ))}
               </div>
-              {project.demo || project.code ? (
+              {project.link || project.code ? (
                 <div className="mt-auto pt-4 flex gap-3 text-sm">
-                  {project.demo ? (
+                  {project.link ? (
                     <a
-                      href={project.demo}
+                      href={project.link}
                       target="_blank"
                       rel="noreferrer"
                       className="rounded-xl bg-white px-4 py-2 font-medium text-slate-950"
                     >
-                      {project.demoLabel || "Live Demo"}
+                      {project.linkLabel || "Project Link"}
                     </a>
                   ) : null}
                   {project.code ? (
