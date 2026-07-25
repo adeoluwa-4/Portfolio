@@ -93,9 +93,10 @@ export default function PortfolioWebsite() {
       description:
         "An AI-powered planning app that converts natural language into structured daily plans, with offline parsing support and a polished cross-platform experience.",
       tech: ["SwiftUI", "iOS", "Offline NLP", "OpenAI API", "Custom algorithms", "Vercel"],
-      demo: "https://schedai-snowy.vercel.app/",
+      demo: "https://apps.apple.com/us/app/schedai/id6777319679",
+      demoLabel: "View on App Store",
       code: "https://github.com/adeoluwa-4/SchedAI",
-      stats: ["Live demo deployed", "Task planning", "Real-time scheduling", "OpenAI integration", "Personalized plans"],
+      stats: ["Available on the App Store", "Task planning", "Real-time scheduling", "OpenAI integration", "Personalized plans"],
     },
     {
       title: "Airline No-Show Prediction",
@@ -468,7 +469,7 @@ export default function PortfolioWebsite() {
                       rel="noreferrer"
                       className="rounded-xl bg-white px-4 py-2 font-medium text-slate-950"
                     >
-                      Live Demo
+                      {project.demoLabel || "Live Demo"}
                     </a>
                   ) : null}
                   {project.code ? (
