@@ -56,7 +56,7 @@ const featuredImages = [
   },
   {
     src: "/Airlineshow2.png",
-    alt: "Airline no-show prediction view",
+    alt: "Airline no show prediction view",
   },
   {
     src: voicePreserveLogo,
@@ -91,27 +91,27 @@ export default function PortfolioWebsite() {
     {
       title: "SchedAI",
       description:
-        "An AI-powered planning app that converts natural language into structured daily plans, with offline parsing support and a polished cross-platform experience.",
+        "An AI powered planning app that converts natural language into structured daily plans, with offline parsing support and a polished cross platform experience.",
       tech: ["SwiftUI", "iOS", "Offline NLP", "OpenAI API", "Custom algorithms", "Vercel"],
       link: "https://apps.apple.com/us/app/schedai/id6777319679",
-      linkLabel: "App Store",
+      linkLabel: "View in App Store",
       code: "https://github.com/adeoluwa-4/SchedAI",
-      stats: ["Available on the App Store", "Task planning", "Real-time scheduling", "OpenAI integration", "Personalized plans"],
+      stats: ["Available on the App Store", "Task planning", "Real time scheduling", "OpenAI integration", "Personalized plans"],
     },
     {
-      title: "Airline No-Show Prediction",
+      title: "Airline No Show Prediction",
       description:
-        "A machine learning project that predicts airline passenger no-shows and explores the strongest drivers behind the outcome.",
-      tech: ["Python", "scikit-learn", "Pandas", "Feature engineering"],
+        "A machine learning project that predicts airline passenger no shows and explores the strongest drivers behind the outcome.",
+      tech: ["Python", "scikit learn", "Pandas", "Feature engineering"],
       link: null,
       code: "https://github.com/adeoluwa-4/airline-no-show-prediction",
-      stats: ["Classification model", "Feature analysis", "Real-world dataset", "Precision + validation"],
+      stats: ["Classification model", "Feature analysis", "Real world dataset", "Precision + validation"],
     },
     {
       title: "Voice Preserve",
       description:
-        "A voice-driven AI project focused on natural interaction, responsive feedback, and a clean path from capture to deployment.",
-      tech: ["Python", "Streamlit", "Speech-to-text", "LLM tooling", "Deployment"],
+        "A voice driven AI project focused on natural interaction, responsive feedback, and a clean path from capture to deployment.",
+      tech: ["Python", "Streamlit", "Speech to text", "LLM tooling", "Deployment"],
       link: null,
       code: "https://github.com/adeoluwa-4/VoicePreserve",
       stats: ["Voice workflow", "Fast interaction", "User feedback", "Deployable app", "Assistant UX"],
@@ -125,7 +125,7 @@ export default function PortfolioWebsite() {
       logo: "/logos/cessna-beechcraft-textron.png",
       dates: "May 2026 - August 2026",
       details:
-        "Summer role focused on systems development, cross-functional engineering collaboration, and building reliable software solutions.",
+        "Summer role focused on systems development, cross functional engineering collaboration, and building reliable software solutions.",
     },
     {
       role: "AI Web Developer Intern",
@@ -157,7 +157,7 @@ export default function PortfolioWebsite() {
     "Machine Learning",
     "Deep Learning",
     "Pandas",
-    "scikit-learn",
+    "scikit learn",
     "XGBoost",
     "Streamlit",
     "TensorFlow",
@@ -303,7 +303,7 @@ export default function PortfolioWebsite() {
                     <li>• Practical software tools</li>
                   </ul>
                   <div className="mt-6 rounded-2xl bg-blue-400/10 p-4 text-sm text-blue-200">
-                    Open to internships, software engineering roles, and product-focused opportunities.
+                    Open to internships, software engineering roles, and product focused opportunities.
                   </div>
                 </div>
               </div>
@@ -324,7 +324,7 @@ export default function PortfolioWebsite() {
             <p className="mt-4 leading-7 text-slate-300">
               Lately I’ve been focused on predictive systems, automation, and polished app
               experiences from machine learning products like World Cup 2026 Predictor to mobile and
-              full-stack tools that solve real problems.
+              full stack tools that solve real problems.
             </p>
           </div>
 
@@ -355,7 +355,7 @@ export default function PortfolioWebsite() {
               <p className="text-sm uppercase tracking-[0.2em] text-blue-300">Flagship Project</p>
               <h3 className="mt-2 text-3xl font-semibold">World Cup 2026 Predictor</h3>
               <p className="mt-4 max-w-2xl leading-7 text-slate-300">
-                Built an end-to-end machine learning and simulation platform for the 2026 FIFA World Cup. The dashboard cleans historical match data, joins ranking signals, predicts expected goals, and surfaces advancement odds through Monte Carlo sampling alongside the new FIFA brand direction.
+                Built an end to end machine learning and simulation platform for the 2026 FIFA World Cup. The dashboard cleans historical match data, joins ranking signals, predicts expected goals, and surfaces advancement odds through Monte Carlo sampling alongside the new FIFA brand direction.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <a
@@ -377,7 +377,7 @@ export default function PortfolioWebsite() {
               </div>
               <div className="mt-5 flex flex-wrap gap-3 text-sm text-slate-300">
                 <span className="rounded-full border border-white/10 px-3 py-1">49,071 historical matches</span>
-                <span className="rounded-full border border-white/10 px-3 py-1">48-team tournament model</span>
+                <span className="rounded-full border border-white/10 px-3 py-1">48 team tournament model</span>
                 <span className="rounded-full border border-white/10 px-3 py-1">Monte Carlo simulation</span>
               </div>
             </div>
