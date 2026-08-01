@@ -123,7 +123,7 @@ export default function PortfolioWebsite() {
       role: "Systems Developer Intern",
       company: "Textron Aviation",
       logo: "/logos/cessna-beechcraft-textron.png",
-      dates: "May 2026 - August 2026",
+      dates: "May 2026 to August 2026",
       details:
         "Summer role focused on systems development, cross functional engineering collaboration, and building reliable software solutions.",
     },
@@ -131,7 +131,7 @@ export default function PortfolioWebsite() {
       role: "AI Developer Intern",
       company: "JNT Company",
       logo: "/logos/jnt.svg",
-      dates: "May 2025 - July 2025",
+      dates: "May 2025 to July 2025",
       details:
         "Built machine learning web features, worked across frontend and backend systems, and helped improve performance and deployment workflows.",
     },
@@ -139,7 +139,7 @@ export default function PortfolioWebsite() {
       role: "IT Support Representative",
       company: "Kansas State University",
       logo: "/logos/kstate.svg",
-      dates: "2024-present",
+      dates: "2024 to present",
       details:
         "Resolved technical issues for students, improved troubleshooting workflows, and built a stronger foundation in systems thinking, communication, and support engineering.",
     },
