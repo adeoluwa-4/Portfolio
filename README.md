@@ -1,14 +1,14 @@
-# Adeoluwa Adekoya — Portfolio
+# Adeoluwa Adekoya: Portfolio
 
-The source for [ade-adekoya-portfolio.vercel.app](https://ade-adekoya-portfolio.vercel.app), a responsive portfolio presenting my shipped products, machine-learning work, technical experience, and contact information.
+The source for [ade-adekoya-portfolio.vercel.app](https://ade-adekoya-portfolio.vercel.app), a responsive portfolio presenting my shipped products, machine learning work, technical experience, and contact information.
 
 ## Highlights
 
-- Product-focused introduction and technical profile
+- Product focused introduction and technical profile
 - Featured work across iOS, full stack AI, and machine learning
-- Direct App Store, live-demo, source-code, resume, LinkedIn, and email links
+- Direct App Store, live demo, source code, resume, LinkedIn, and email links
 - Project image previews with an accessible modal viewer
-- Responsive layouts and reduced-motion support
+- Responsive layouts and reduced motion support
 - Production deployment on Vercel
 
 ## Featured projects
@@ -56,7 +56,7 @@ index.html              Vite document entry point
 
 ## Design decisions
 
-The site keeps the content in a single project-oriented experience so recruiters can move quickly from skills to evidence. Links use destination-specific wording—such as “View in App Store” and “Live Demo”—and interactive image previews include keyboard and reduced-motion considerations.
+The site keeps the content in a single project focused experience so recruiters can move quickly from skills to evidence. Links use destination specific wording, such as “View in App Store” and “Live Demo,” and interactive image previews include keyboard and reduced motion considerations.
 
 ## Deployment
 
