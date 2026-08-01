@@ -56,7 +56,7 @@ const featuredImages = [
   },
   {
     src: "/Airlineshow2.png",
-    alt: "Airline no show prediction view",
+    alt: "Airline passenger satisfaction prediction view",
   },
   {
     src: voicePreserveLogo,
