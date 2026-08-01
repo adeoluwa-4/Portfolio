@@ -99,13 +99,13 @@ export default function PortfolioWebsite() {
       stats: ["Available on the App Store", "Task planning", "Real time scheduling", "OpenAI integration", "Personalized plans"],
     },
     {
-      title: "Airline No Show Prediction",
+      title: "Airline Passenger Satisfaction",
       description:
-        "A machine learning project that predicts airline passenger no shows and explores the strongest drivers behind the outcome.",
+        "A machine learning project that predicts airline passenger satisfaction from trip context and service ratings, with exploratory analysis and an interactive interface.",
       tech: ["Python", "scikit learn", "Pandas", "Feature engineering"],
       link: null,
-      code: "https://github.com/adeoluwa-4/airline-no-show-prediction",
-      stats: ["Classification model", "Feature analysis", "Real world dataset", "Precision + validation"],
+      code: "https://github.com/adeoluwa-4/airline-passenger-satisfaction",
+      stats: ["Random Forest", "Feature analysis", "Service ratings", "Streamlit interface"],
     },
     {
       title: "Voice Preserve",
@@ -128,7 +128,7 @@ export default function PortfolioWebsite() {
         "Summer role focused on systems development, cross functional engineering collaboration, and building reliable software solutions.",
     },
     {
-      role: "AI Web Developer Intern",
+      role: "AI Developer Intern",
       company: "JNT Company",
       logo: "/logos/jnt.svg",
       dates: "May 2025 - July 2025",
