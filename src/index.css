@@ -82,7 +82,8 @@
 }
 
 .portfolio-bg {
-  background: #020617;
+  background: #000;
+  color: #fff;
   --parallax-deep-x: 0px;
   --parallax-deep-y: 0px;
   --parallax-mid-x: 0px;
@@ -123,7 +124,7 @@
 .slideshow-layer {
   position: absolute;
   inset: 0;
-  background: linear-gradient(115deg, #020617, #0b112b, #0f172a, #082f49);
+  background: #000;
   background-size: 260% 260%;
   animation: slideshowBg 14s ease-in-out infinite;
   opacity: 0.92;
@@ -136,14 +137,14 @@
     linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
   background-size: 46px 46px;
   mask-image: radial-gradient(circle at center, black 45%, transparent 95%);
-  opacity: 0.35;
+  opacity: 0;
 }
 
 .ambient-orb {
   position: absolute;
   border-radius: 9999px;
   filter: blur(54px);
-  opacity: 0.45;
+  opacity: 0;
 }
 
 .ambient-orb-a {
@@ -170,11 +171,11 @@
 }
 
 .hero-title {
-  background: linear-gradient(90deg, #e2e8f0, #93c5fd, #e2e8f0);
+  background: none;
   background-size: 220% auto;
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  color: #fff;
   animation: slideshowBg 6s ease-in-out infinite;
 }
 
@@ -189,12 +190,35 @@
 }
 
 .typing-accent {
-  color: #93c5fd;
+  color: #fff;
+}
+
+.portfolio-bg :is(h1, h2, h3, p, li, span, a, button) {
+  color: #fff !important;
+}
+
+.portfolio-bg a.bg-white {
+  color: #020617 !important;
+}
+
+.portfolio-bg .bg-gradient-to-br,
+.portfolio-bg .bg-gradient-to-r {
+  background-color: transparent;
+  background-image: none;
 }
 
 .typing-follow {
   opacity: 0;
   animation: riseIn 0.7s ease-out 3s forwards;
+}
+
+.hero-title.typing-follow {
+  display: block;
+  max-width: 42rem;
+  margin-top: 0.75rem;
+  font-size: clamp(1.75rem, 3.6vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
 .hero-lead {
@@ -214,6 +238,35 @@
 
 .float-card {
   animation: floatCard 6s ease-in-out infinite;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: #000;
+}
+
+.float-card > div {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: #000;
+}
+
+.float-card > div > div:last-child {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #000;
+  color: #fff !important;
+}
+
+#about > .grid > div:nth-child(2) {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: #000;
+}
+
+#about > .grid > div:nth-child(2) .chip-animate {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: #000;
+}
+
+#about > .grid > div:nth-child(2) .chip-animate > span {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: #000;
+  color: #fff !important;
 }
 
 .tile-animate {
