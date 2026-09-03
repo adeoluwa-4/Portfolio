@@ -55,8 +55,8 @@ const featuredImages = [
     alt: "SchedAI planner experience",
   },
   {
-    src: "/Airlineshow2.png",
-    alt: "Airline passenger satisfaction prediction view",
+    src: "/roster-og.png",
+    alt: "Roster daily NBA player guessing game",
   },
   {
     src: voicePreserveLogo,
@@ -99,13 +99,14 @@ export default function PortfolioWebsite() {
       stats: ["Available on the App Store", "Task planning", "Real time scheduling", "OpenAI integration", "Personalized plans"],
     },
     {
-      title: "Airline Passenger Satisfaction",
+      title: "Roster",
       description:
-        "A machine learning project that predicts airline passenger satisfaction from trip context and service ratings, with exploratory analysis and an interactive interface.",
-      tech: ["Python", "scikit learn", "Pandas", "Feature engineering"],
-      link: null,
-      code: "https://github.com/adeoluwa-4/airline-passenger-satisfaction",
-      stats: ["Random Forest", "Feature analysis", "Service ratings", "Streamlit interface"],
+        "A daily NBA guessing game where players identify the mystery athlete in 10 tries using team, height, position, draft year, nationality, and conference clues.",
+      tech: ["Next.js", "TypeScript", "React", "NBA data"],
+      link: "https://playdailyroster.app",
+      linkLabel: "Play Roster",
+      code: "https://github.com/adeoluwa-4/Roster",
+      stats: ["10 guesses", "6 clues", "Daily challenge", "Stats and streaks"],
     },
     {
       title: "Voice Preserve",
@@ -362,7 +363,7 @@ export default function PortfolioWebsite() {
                   href="https://adeoluwa-4-wc26-predictor-streamlit-app-awcr9s.streamlit.app/"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-2xl bg-white px-4 py-2 text-sm font-medium text-slate-950 transition hover:bg-slate-100"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-950 shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-100"
                 >
                   Live Demo
                 </a>
@@ -467,7 +468,7 @@ export default function PortfolioWebsite() {
                       href={project.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-xl bg-white px-4 py-2 font-medium text-slate-950"
+                      className="rounded-xl border border-slate-200 bg-white px-4 py-2 font-medium text-slate-950 shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-100"
                     >
                       {project.linkLabel || "Project Link"}
                     </a>
