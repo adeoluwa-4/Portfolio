@@ -199,6 +199,8 @@
 
 .portfolio-bg a.bg-white {
   color: #020617 !important;
+  background-color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.85) !important;
 }
 
 .portfolio-bg .bg-gradient-to-br,
