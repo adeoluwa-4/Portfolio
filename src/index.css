@@ -170,6 +170,41 @@
   animation: riseIn 0.8s ease-out forwards;
 }
 
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: none;
+  transition: opacity 700ms ease var(--reveal-delay, 0ms), transform 700ms ease var(--reveal-delay, 0ms);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.more-project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), transparent 42%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.more-project-card:hover::before {
+  opacity: 1;
+}
+
+.project-arrow {
+  transition: transform 260ms ease, color 260ms ease;
+}
+
+.more-project-card:hover .project-arrow {
+  color: #fff !important;
+  transform: translate(3px, -3px);
+}
+
 .hero-title {
   background: none;
   background-size: 220% auto;
@@ -307,6 +342,7 @@
   .hero-cta-row,
   .hero-icons-row,
   .slide-panel,
+  .scroll-reveal,
   .chip-animate,
   .float-card {
     animation: none !important;
