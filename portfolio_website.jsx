@@ -119,6 +119,43 @@ export default function PortfolioWebsite() {
     },
   ];
 
+  const moreProjects = [
+    {
+      number: "01",
+      title: "LLM Cost Autopilot",
+      description:
+        "A model routing layer that balances task quality and cost, escalates to stronger models when needed, and adds local RAG search before requests are sent.",
+      tech: ["JavaScript", "LLM routing", "RAG", "API design", "Testing"],
+      code: "https://github.com/adeoluwa-4/llmcostautopilot",
+    },
+    {
+      number: "02",
+      title: "GeoLGM Trainer",
+      description:
+        "A config driven PyTorch training system for image recognition with geospatial metadata, saved checkpoints, experiment tracking, profiling, and dashboard views.",
+      tech: ["Python", "PyTorch", "Computer vision", "MLOps", "Streamlit"],
+      code: "https://github.com/adeoluwa-4/geolgm-trainer",
+    },
+    {
+      number: "03",
+      title: "AI Memory Coach",
+      description:
+        "A local first study coach that saves lessons, finds learning patterns, schedules spaced review, tracks progress, and supports optional AI coaching.",
+      tech: ["Python", "CLI", "Spaced repetition", "Local storage", "AI"],
+      code: "https://github.com/adeoluwa-4/cf-ai-memory-coach",
+    },
+    {
+      number: "04",
+      title: "AI Provider Match",
+      description:
+        "An explainable home service matching demo with intent detection, local RAG search, provider ranking, safety checks, and clear recommendation cards.",
+      tech: ["JavaScript", "Local RAG", "Ranking", "Evaluation", "Web app"],
+      link: "https://ai-provider-match.vercel.app",
+      linkLabel: "Live Demo",
+      code: "https://github.com/adeoluwa-4/AIProviderMatch",
+    },
+  ];
+
   const experience = [
     {
       role: "Systems Developer Intern",
@@ -179,6 +216,20 @@ export default function PortfolioWebsite() {
     const root = rootRef.current;
     if (!root) return;
 
+    const revealItems = root.querySelectorAll(".scroll-reveal");
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+    );
+    revealItems.forEach((item) => revealObserver.observe(item));
+
     let frameId = 0;
     let pointerX = 0;
     let pointerY = 0;
@@ -233,6 +284,7 @@ export default function PortfolioWebsite() {
       window.removeEventListener("pointerleave", resetPointer);
       window.removeEventListener("scroll", updateScroll);
       window.removeEventListener("resize", updateScroll);
+      revealObserver.disconnect();
       if (frameId) window.cancelAnimationFrame(frameId);
     };
   }, []);
@@ -313,7 +365,7 @@ export default function PortfolioWebsite() {
         </div>
       </section>
 
-      <section className="slide-panel relative z-10 mx-auto max-w-6xl px-6 py-16 md:px-10" style={{ animationDelay: "0.12s" }} id="about">
+      <section className="slide-panel scroll-reveal relative z-10 mx-auto max-w-6xl px-6 py-16 md:px-10" style={{ animationDelay: "0.12s" }} id="about">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl">
             <h2 className="text-2xl font-semibold">About Me</h2>
@@ -349,7 +401,7 @@ export default function PortfolioWebsite() {
         </div>
       </section>
 
-      <section className="slide-panel relative z-10 mx-auto max-w-6xl px-6 py-8 md:px-10" style={{ animationDelay: "0.2s" }} id="projects">
+      <section className="slide-panel scroll-reveal relative z-10 mx-auto max-w-6xl px-6 py-8 md:px-10" style={{ animationDelay: "0.2s" }} id="projects">
         <div className="mb-12 rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl">
           <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
@@ -437,8 +489,8 @@ export default function PortfolioWebsite() {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="slide-panel tile-animate flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl transition hover:-translate-y-1"
-              style={{ animationDelay: `${0.32 + index * 0.08}s` }}
+              className="scroll-reveal tile-animate flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl transition hover:-translate-y-1"
+              style={{ "--reveal-delay": `${index * 90}ms` }}
             >
               <div className="flex flex-col gap-4">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
@@ -488,9 +540,66 @@ export default function PortfolioWebsite() {
             </div>
           ))}
         </div>
+
+        <div className="mt-24">
+          <div className="scroll-reveal mb-10 grid gap-5 border-b border-white/15 pb-8 md:grid-cols-[0.75fr_1.25fr] md:items-end">
+            <div>
+              <p className="text-sm uppercase tracking-[0.2em] text-blue-300">More Builds</p>
+              <h2 className="mt-2 text-3xl font-semibold md:text-4xl">Keep scrolling. There’s more.</h2>
+            </div>
+            <p className="max-w-2xl text-sm leading-6 text-slate-300 md:justify-self-end md:text-base">
+              Smaller experiments and focused systems where I explore model routing, computer vision,
+              learning tools, and explainable matching.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {moreProjects.map((project, index) => (
+              <article
+                key={project.title}
+                className="scroll-reveal more-project-card group relative overflow-hidden rounded-3xl border border-white/15 bg-black p-6 md:p-8"
+                style={{ "--reveal-delay": `${(index % 2) * 120}ms` }}
+              >
+                <div className="flex items-start justify-between gap-6">
+                  <p className="text-xs font-medium tracking-[0.25em] text-slate-500">PROJECT {project.number}</p>
+                  <span aria-hidden="true" className="project-arrow text-xl text-slate-500">↗</span>
+                </div>
+                <h3 className="mt-10 text-2xl font-semibold">{project.title}</h3>
+                <p className="mt-4 max-w-xl text-sm leading-6 text-slate-300">{project.description}</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {project.tech.map((item) => (
+                    <span key={item} className="rounded-full border border-white/15 px-3 py-1 text-xs text-slate-300">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-8 flex flex-wrap gap-3 text-sm">
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-xl border border-slate-200 bg-white px-4 py-2 font-medium text-slate-950 transition hover:-translate-y-0.5"
+                    >
+                      {project.linkLabel}
+                    </a>
+                  ) : null}
+                  <a
+                    href={project.code}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-xl border border-white/20 px-4 py-2 font-medium text-white transition hover:border-white/50 hover:bg-white/5"
+                  >
+                    View GitHub
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <section className="slide-panel relative z-10 mx-auto max-w-6xl px-6 py-16 md:px-10" style={{ animationDelay: "0.26s" }} id="experience">
+      <section className="slide-panel scroll-reveal relative z-10 mx-auto max-w-6xl px-6 py-16 md:px-10" style={{ animationDelay: "0.26s" }} id="experience">
         <p className="text-sm uppercase tracking-[0.2em] text-blue-300">Background</p>
         <h2 className="mt-2 text-3xl font-semibold">Experience</h2>
         <div className="mt-8 space-y-5">
@@ -529,7 +638,7 @@ export default function PortfolioWebsite() {
         </div>
       </section>
 
-      <section className="slide-panel relative z-10 mx-auto max-w-6xl px-6 pb-20 md:px-10" style={{ animationDelay: "0.32s" }} id="contact">
+      <section className="slide-panel scroll-reveal relative z-10 mx-auto max-w-6xl px-6 pb-20 md:px-10" style={{ animationDelay: "0.32s" }} id="contact">
         <div className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-blue-500/15 to-purple-500/15 p-8 shadow-2xl">
           <h2 className="text-3xl font-semibold">Let’s build something great</h2>
           <p className="mt-4 max-w-2xl leading-7 text-slate-300">
